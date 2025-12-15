@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from 'react'
-import Sidebar from '../Sidebar/Sidebar'
-import History from './History'
-import DiagnosticList from './DiagnosticList'
-import PatientProfileCard from './PatientProfileCard'
-import { Patient } from '@/types/patient'
+import React, { useState } from "react";
+import Sidebar from "../Sidebar/Sidebar";
+import History from "./History";
+import DiagnosticList from "./DiagnosticList";
+import PatientProfileCard from "./PatientProfileCard";
+import { Patient } from "@/types/patient";
 
 const Dashboard = () => {
   const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
@@ -13,7 +13,7 @@ const Dashboard = () => {
     setSelectedPatient(patient);
   };
   return (
-    <div className='grid grid-cols-12 gap-10'>
+    <div className="grid grid-cols-12 gap-10">
       <div className="col-span-3">
         <Sidebar
           onPatientSelect={handlePatientSelect}
@@ -28,7 +28,7 @@ const Dashboard = () => {
         <PatientProfileCard patient={selectedPatient} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

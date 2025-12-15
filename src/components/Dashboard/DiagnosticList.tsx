@@ -1,6 +1,6 @@
-import React from 'react';
-import Title from '../common/Title';
-import { Patient } from '@/types/patient';
+import React from "react";
+import Title from "../common/Title";
+import { Patient } from "@/types/patient";
 
 interface DiagnosticListProps {
   patient: Patient | null;
@@ -9,9 +9,9 @@ interface DiagnosticListProps {
 const DiagnosticList = ({ patient }: DiagnosticListProps) => {
   if (!patient) {
     return (
-      <div className='bg-white rounded-[16px] p-4 mt-7'>
+      <div className="mt-7 rounded-[16px] bg-white p-4">
         <Title title="Diagnostic List" />
-        <p className='text-[#707070] text-center py-8'>No patient selected</p>
+        <p className="py-8 text-center text-[#707070]">No patient selected</p>
       </div>
     );
   }
@@ -19,11 +19,11 @@ const DiagnosticList = ({ patient }: DiagnosticListProps) => {
   const diagnostics = patient.diagnostic_list || [];
 
   return (
-    <div className='bg-white rounded-[16px] p-4 mt-7'>
+    <div className="mt-7 rounded-[16px] bg-white p-4">
       <Title title="Diagnostic List" />
-      <div className="overflow-hidden mt-6">
+      <div className="mt-6 overflow-hidden">
         {/* Table Header */}
-        <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#F6F7F8] rounded-full border-gray-200">
+        <div className="grid grid-cols-12 gap-4 rounded-full border-gray-200 bg-[#F6F7F8] px-6 py-4">
           <div className="col-span-3 text-[14px] leading-[19px] font-bold text-[#072635]">
             Problem/Diagnosis
           </div>
@@ -36,26 +36,26 @@ const DiagnosticList = ({ patient }: DiagnosticListProps) => {
         </div>
 
         {/* Table Body */}
-        <div className="max-h-64 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-black [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div className="max-h-64 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-black [&::-webkit-scrollbar-track]:bg-gray-100">
           {diagnostics.length > 0 ? (
             diagnostics.map((item, index) => (
               <div
                 key={index}
-                className="grid grid-cols-12 gap-4 px-6 py-5 border-b border-gray-100 last:border-b-0 transition-colors"
+                className="grid grid-cols-12 gap-4 border-b border-gray-100 px-6 py-5 transition-colors last:border-b-0"
               >
-                <div className="col-span-3 text-[#072635] text-[14px] leading-[19px]">
+                <div className="col-span-3 text-[14px] leading-[19px] text-[#072635]">
                   {item.name}
                 </div>
-                <div className="col-span-6 text-[#072635] text-[14px] leading-[19px]">
+                <div className="col-span-6 text-[14px] leading-[19px] text-[#072635]">
                   {item.description}
                 </div>
-                <div className="col-span-3 text-[#072635] text-[14px] leading-[19px]">
+                <div className="col-span-3 text-[14px] leading-[19px] text-[#072635]">
                   {item.status}
                 </div>
               </div>
             ))
           ) : (
-            <div className="text-center py-8 text-[#707070]">
+            <div className="py-8 text-center text-[#707070]">
               No diagnostic records available
             </div>
           )}
