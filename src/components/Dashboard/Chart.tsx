@@ -111,7 +111,7 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
                 },
                 grid: {
                     color: '#E0E0E0',
-                    drawBorder: false,
+                  
                 },
             },
         },
