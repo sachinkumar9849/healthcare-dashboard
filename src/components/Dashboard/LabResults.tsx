@@ -58,7 +58,7 @@ const LabResults: React.FC<LabResultsProps> = ({ patient }) => {
             patient.lab_results.map((test, index) => (
               <li 
                 key={index} 
-                className='flex justify-between items-center py-3 px-3 hover:bg-[#F6F7F8] rounded-lg transition-colors'
+                className='flex justify-between items-center py-3 px-3 hover:bg-[#F6F7F8]  transition-colors'
               >
                 <p className='text-[#072635] text-[13px] leading-[18px]'>
                   {test}

@@ -32,9 +32,11 @@ const History = ({ patient }: HistoryProps) => {
 
   return (
     <div className='bg-white rounded-[16px] p-4'>
-      <Title title="Diagnosis History" />
+     <div className="mb-5">
+         <Title title="Diagnosis History" />
+     </div>
 
-      <Chart/>
+     <Chart patient={patient} />
 
       <div className="grid grid-cols-3 gap-4 mt-5">
         {/* Respiratory Rate Card */}
