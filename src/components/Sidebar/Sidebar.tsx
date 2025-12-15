@@ -53,12 +53,12 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='bg-white rounded-[16px] p-4'>
+        <div className='bg-white rounded-[16px] p-4 h-screen flex flex-col'>
             <div className="flex justify-between items-center mb-5">
                 <Title title="Patients" />
                 <Image src="/search.svg" alt="search" width={18} height={18} />
             </div>
-            <ul>
+            <ul className='overflow-y-auto flex-1 pr-2 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-black [&::-webkit-scrollbar-thumb]:rounded-full'>
                 {patients.map((patient, index) => (
                     <li key={index} className='flex justify-between items-center mb-5'>
                         <div className="flex items-center">
