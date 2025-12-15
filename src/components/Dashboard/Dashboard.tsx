@@ -21,7 +21,7 @@ const Dashboard = () => {
         />
       </div>
       <div className="col-span-6">
-        <History />
+ <History patient={selectedPatient} />
       <DiagnosticList patient={selectedPatient} />
       </div>
       <div className="col-span-3">
