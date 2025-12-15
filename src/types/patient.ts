@@ -1,22 +1,3 @@
-/**
- * Type definitions for patient data structure
- * Matches the Coalition Technologies API response
- */
-
-export interface Patient {
-  name: string;
-  gender: string;
-  age: number;
-  profile_picture: string;
-  date_of_birth: string;
-  phone_number: string;
-  emergency_contact: string;
-  insurance_type: string;
-  diagnosis_history: DiagnosisHistory[];
-  diagnostic_list: Diagnostic[];
-  lab_results: string[];
-}
-
 export interface DiagnosisHistory {
   month: string;
   year: number;
@@ -44,15 +25,28 @@ export interface DiagnosisHistory {
   };
 }
 
-export interface Diagnostic {
+export interface DiagnosticList {
   name: string;
   description: string;
   status: string;
 }
 
-// Chart data type for Recharts
-export interface ChartDataPoint {
-  month: string;
-  systolic: number;
-  diastolic: number;
+export interface LabResult {
+  test_name: string;
+  result: string;
+  status: string;
+}
+
+export interface Patient {
+  name: string;
+  gender: string;
+  age: number;
+  profile_picture: string;
+  date_of_birth: string;
+  phone_number: string;
+  emergency_contact: string;
+  insurance_type: string;
+  diagnosis_history: DiagnosisHistory[];
+  diagnostic_list: DiagnosticList[];
+  lab_results: LabResult[];
 }
