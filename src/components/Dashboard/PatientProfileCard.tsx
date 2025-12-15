@@ -4,8 +4,13 @@ import Button from '../common/Button';
 import Image from 'next/image';
 import { Patient } from '@/types/patient';
 import { fetchPatients } from '@/lib/api';
+import LabResults from './LabResults';
 
-export default function PatientProfileCard() {
+type PatientProfileCardProps = {
+    patient?: Patient | null;
+};
+
+export default function PatientProfileCard({ patient }: PatientProfileCardProps) {
     const [jessicaTaylor, setJessicaTaylor] = useState<Patient | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -59,7 +64,8 @@ export default function PatientProfileCard() {
     };
 
     return (
-        <div className="bg-white rounded-[16px] p-7">
+        <> 
+        <div className="bg-white rounded-[16px] p-7 mb-5">
             {/* Profile Image */}
             <div className="flex justify-center mb-6">
                 <div className="w-40 h-40 rounded-full overflow-hidden bg-gray-200">
@@ -166,5 +172,7 @@ export default function PatientProfileCard() {
                 </Button>
             </div>
         </div>
+        <LabResults patient={patient ?? null} />
+        </>
     );
 }

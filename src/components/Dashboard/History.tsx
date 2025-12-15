@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../common/Title';
 import Image from 'next/image';
 import { Patient } from '@/types/patient';
+import Chart from './Chart';
 
 interface HistoryProps {
   patient: Patient | null;
@@ -32,6 +33,8 @@ const History = ({ patient }: HistoryProps) => {
   return (
     <div className='bg-white rounded-[16px] p-4'>
       <Title title="Diagnosis History" />
+
+      <Chart/>
 
       <div className="grid grid-cols-3 gap-4 mt-5">
         {/* Respiratory Rate Card */}

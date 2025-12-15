@@ -31,12 +31,6 @@ export interface DiagnosticList {
   status: string;
 }
 
-export interface LabResult {
-  test_name: string;
-  result: string;
-  status: string;
-}
-
 export interface Patient {
   name: string;
   gender: string;
@@ -48,5 +42,5 @@ export interface Patient {
   insurance_type: string;
   diagnosis_history: DiagnosisHistory[];
   diagnostic_list: DiagnosticList[];
-  lab_results: LabResult[];
+  lab_results: string[]; // Changed from LabResult[] to string[]
 }

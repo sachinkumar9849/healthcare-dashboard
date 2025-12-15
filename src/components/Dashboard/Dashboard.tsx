@@ -7,7 +7,7 @@ import PatientProfileCard from './PatientProfileCard'
 import { Patient } from '@/types/patient'
 
 const Dashboard = () => {
-   const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
+  const [selectedPatient, setSelectedPatient] = useState<Patient | null>(null);
 
   const handlePatientSelect = (patient: Patient) => {
     setSelectedPatient(patient);
@@ -15,17 +15,17 @@ const Dashboard = () => {
   return (
     <div className='grid grid-cols-12 gap-10'>
       <div className="col-span-3">
-       <Sidebar 
+        <Sidebar
           onPatientSelect={handlePatientSelect}
           selectedPatient={selectedPatient}
         />
       </div>
       <div className="col-span-6">
- <History patient={selectedPatient} />
-      <DiagnosticList patient={selectedPatient} />
+        <History patient={selectedPatient} />
+        <DiagnosticList patient={selectedPatient} />
       </div>
       <div className="col-span-3">
-        <PatientProfileCard/>
+        <PatientProfileCard patient={selectedPatient} />
       </div>
     </div>
   )
