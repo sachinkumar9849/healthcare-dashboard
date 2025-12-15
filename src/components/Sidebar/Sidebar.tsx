@@ -6,7 +6,12 @@ import Title from '../common/Title';
 import { Patient } from '@/types/patient';
 import { fetchPatients } from '@/lib/api';
 
-const Sidebar = () => {
+interface SidebarProps {
+    onPatientSelect?: (patient: Patient) => void;
+    selectedPatient?: Patient | null;
+}
+
+const Sidebar = ({ onPatientSelect, selectedPatient }: SidebarProps) => {
     const [patients, setPatients] = useState<Patient[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -17,9 +22,13 @@ const Sidebar = () => {
                 setLoading(true);
                 const data = await fetchPatients();
                 setPatients(data);
+                // Auto-select first patient if no patient is selected
+                if (data.length > 0 && !selectedPatient && onPatientSelect) {
+                    onPatientSelect(data[0]);
+                }
             } catch (err) {
                 setError('Failed to load patients');
-             
+                console.error('Error loading patients:', err);
             } finally {
                 setLoading(false);
             }
@@ -53,20 +62,26 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='bg-white rounded-[16px] p-4 h-screen flex flex-col'>
-            <div className="flex justify-between items-center mb-5">
+        <div className='bg-white rounded-[16px] py-4 h-screen flex flex-col pr-1'>
+            <div className="flex justify-between items-center mb-5 px-4">
                 <Title title="Patients" />
                 <Image src="/search.svg" alt="search" width={18} height={18} />
             </div>
             <ul className='overflow-y-auto flex-1 pr-2 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-black [&::-webkit-scrollbar-thumb]:rounded-full'>
                 {patients.map((patient, index) => (
-                    <li key={index} className='flex justify-between items-center mb-5'>
+                    <li 
+                        key={index} 
+                        className={`flex justify-between items-center mb-5 cursor-pointer transition-colors px-4  ${
+                            selectedPatient?.name === patient.name ? 'bg-[#D8FCF7]  p-2 ' : ''
+                        }`}
+                        onClick={() => onPatientSelect && onPatientSelect(patient)}
+                    >
                         <div className="flex items-center">
                             <Image 
-                                src={patient?.profile_picture || "/noImage.jpg"} 
+                                src={patient.profile_picture} 
                                 width={48} 
                                 height={48} 
-                               alt='img'
+                                alt={patient.name}
                                 className='rounded-full'
                             />
                             <div className="ml-2">
@@ -78,7 +93,7 @@ const Sidebar = () => {
                                 </p>
                             </div>
                         </div>
-                        <Image
+                        <Image 
                             className='mt-2' 
                             src="/more_horiz.svg" 
                             alt="more_horiz" 
