@@ -1,16 +1,14 @@
-/**
- * Root Layout Component
- * Wraps all pages with common structure and metadata
- */
-
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google'; // Changed from Inter to Manrope
 import './globals.css';
+import Header from '@/components/Header';
 
-// Load Inter font from Google Fonts
-const inter = Inter({ 
+// Load Manrope font from Google Fonts
+const manrope = Manrope({ 
   subsets: ['latin'],
-  display: 'swap', // Improve font loading performance
+  display: 'swap',
+
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 // Metadata for SEO
@@ -27,7 +25,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body style={{background:"#F6F7F8", padding:"20px"}} className={manrope.className}>
+        <Header/>
         {children}
       </body>
     </html>
