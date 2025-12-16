@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="bg-whiteBg shadow-card-hover mb-6 flex items-center justify-between rounded-full bg-white px-5 py-2">
+    <div className="bg-whiteBg shadow-card-hover mb-6 hidden items-center justify-between rounded-full bg-white px-5 py-2 md:flex">
       <div className="reltive">
         <Image
           src="/logo.svg"

@@ -15,3 +15,7 @@ body {
   background-color: var(--gray-light);
   padding: 20px;
 }
+html,
+body {
+  overflow-x: hidden;
+}

@@ -147,8 +147,8 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
 
   return (
     <div className="rounded-[12px] bg-white">
-      <div className="grid grid-cols-12 gap-6 rounded-[12px] bg-[#F4F0FE] p-5">
-        <div className="col-span-9">
+      <div className="grid gap-6 rounded-[12px] bg-[#F4F0FE] p-5 md:grid-cols-12">
+        <div className="md:col-span-9">
           <div className="mb-6 flex items-center justify-between">
             <h3 className="text-lg font-bold text-[var(--black-dark)]">
               Blood Pressure
@@ -158,9 +158,9 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
             <Line data={data} options={options} />
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-3">
           <div className="pt-4">
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-[#C26EB4]"></div>

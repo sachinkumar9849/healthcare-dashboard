@@ -42,7 +42,7 @@ const History = ({ patient }: HistoryProps) => {
 
       <Chart patient={patient} />
 
-      <div className="mt-5 grid grid-cols-3 gap-4">
+      <div className="mt-5 grid gap-4 md:grid-cols-3">
         <div className="col-span-1">
           <div className="flex flex-col rounded-[12px] bg-[#E0F3FA] p-5">
             <Image

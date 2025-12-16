@@ -13,18 +13,18 @@ const Dashboard = () => {
     setSelectedPatient(patient);
   };
   return (
-    <div className="grid grid-cols-12 gap-10">
-      <div className="col-span-3">
+    <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
+      <div className="md:col-span-3">
         <Sidebar
           onPatientSelect={handlePatientSelect}
           selectedPatient={selectedPatient}
         />
       </div>
-      <div className="col-span-6">
+      <div className="md:col-span-6">
         <History patient={selectedPatient} />
         <DiagnosticList patient={selectedPatient} />
       </div>
-      <div className="col-span-3">
+      <div className="md:col-span-3">
         <PatientProfileCard patient={selectedPatient} />
       </div>
     </div>
