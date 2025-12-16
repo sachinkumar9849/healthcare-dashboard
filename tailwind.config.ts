@@ -9,21 +9,21 @@ module.exports = {
     extend: {
       colors: {
         // Background Colors
-        "app-bg": "#F6F7F8", // Main app background
-        "card-bg": "#FFFFFF", // Card background
+        "app-bg": "#F6F7F8",
+        "card-bg": "#FFFFFF",
 
         // Chart Colors
         chart: {
-          pink: "#E91E8C", // Systolic line
-          purple: "#8C6FE6", // Diastolic line
-          grid: "#F0F0F0", // Grid lines
+          pink: "#E91E8C",
+          purple: "#8C6FE6",
+          grid: "#F0F0F0",
         },
 
         // Health Metric Cards
         health: {
           respiratory: {
-            light: "#E0F3FA", // Card background
-            DEFAULT: "#3B82F6", // Icon color
+            light: "#E0F3FA",
+            DEFAULT: "#3B82F6",
           },
           temperature: {
             light: "#FFE6E6",
@@ -37,18 +37,17 @@ module.exports = {
 
         // Status Colors
         status: {
-          normal: "#10B981", // Green
-          higher: "#EF4444", // Red
-          lower: "#3B82F6", // Blue
-          warning: "#F59E0B", // Orange
+          normal: "#10B981",
+          higher: "#EF4444",
+          lower: "#3B82F6",
+          warning: "#F59E0B",
         },
 
-        // UI Elements
         ui: {
-          primary: "#01F0FF", // Primary action
-          secondary: "#072635", // Secondary text
-          border: "#E5E7EB", // Borders
-          hover: "#F3F4F6", // Hover state
+          primary: "#01F0FF",
+          secondary: "#072635",
+          border: "#E5E7EB",
+          hover: "#F3F4F6",
         },
       },
 

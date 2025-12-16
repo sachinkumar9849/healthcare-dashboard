@@ -44,7 +44,9 @@ const Sidebar = ({ onPatientSelect, selectedPatient }: SidebarProps) => {
           <Title title="Patients" />
           <Image src="/search.svg" alt="search" width={18} height={18} />
         </div>
-        <p className="py-4 text-center text-[#707070]">Loading patients...</p>
+        <p className="py-4 text-center text-[var(--gray-dark)]">
+          Loading patients...
+        </p>
       </div>
     );
   }
@@ -72,7 +74,9 @@ const Sidebar = ({ onPatientSelect, selectedPatient }: SidebarProps) => {
           <li
             key={index}
             className={`mb-5 flex cursor-pointer items-center justify-between px-4 transition-colors ${
-              selectedPatient?.name === patient.name ? "bg-[#D8FCF7] p-2" : ""
+              selectedPatient?.name === patient.name
+                ? "bg-[var(--theme-color)] p-2"
+                : ""
             }`}
             onClick={() => onPatientSelect && onPatientSelect(patient)}
           >
@@ -85,10 +89,10 @@ const Sidebar = ({ onPatientSelect, selectedPatient }: SidebarProps) => {
                 className="rounded-full"
               />
               <div className="ml-2">
-                <p className="text-[14px] font-bold text-[#072635]">
+                <p className="text-[14px] font-bold text-[var(--black-dark)]">
                   {patient.name}
                 </p>
-                <p className="text-[14px] leading-[19px] text-[#707070]">
+                <p className="text-[14px] leading-[19px] text-[var(--gray-dark)]">
                   {patient.gender}, {patient.age}
                 </p>
               </div>

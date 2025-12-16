@@ -13,7 +13,9 @@ const History = ({ patient }: HistoryProps) => {
     return (
       <div className="rounded-[16px] bg-white p-4">
         <Title title="Diagnosis History" />
-        <p className="py-8 text-center text-[#707070]">No patient selected</p>
+        <p className="py-8 text-center text-[var(--gray-dark)]">
+          No patient selected
+        </p>
       </div>
     );
   }
@@ -25,7 +27,7 @@ const History = ({ patient }: HistoryProps) => {
     return (
       <div className="rounded-[16px] bg-white p-4">
         <Title title="Diagnosis History" />
-        <p className="py-8 text-center text-[#707070]">
+        <p className="py-8 text-center text-[var(--gray-dark)]">
           No diagnosis history available
         </p>
       </div>
@@ -49,13 +51,13 @@ const History = ({ patient }: HistoryProps) => {
               height={96}
               alt="respiratory"
             />
-            <p className="mt-3 text-[16px] font-medium text-[#072635]">
+            <p className="mt-3 text-[16px] font-medium text-[var(--black-dark)]">
               Respiratory Rate
             </p>
             <p className="text-[30px] leading-[41px] font-extrabold">
               {latestHistory.respiratory_rate.value} bpm
             </p>
-            <p className="mt-3 text-[14px] leading-[19px] text-[#072635]">
+            <p className="mt-3 text-[14px] leading-[19px] text-[var(--black-dark)]">
               {latestHistory.respiratory_rate.levels}
             </p>
           </div>
@@ -69,13 +71,13 @@ const History = ({ patient }: HistoryProps) => {
               height={96}
               alt="temperature"
             />
-            <p className="mt-3 text-[16px] font-medium text-[#072635]">
+            <p className="mt-3 text-[16px] font-medium text-[var(--black-dark)]">
               Temperature
             </p>
             <p className="text-[30px] leading-[41px] font-extrabold">
               {latestHistory.temperature.value}°F
             </p>
-            <p className="mt-3 text-[14px] leading-[19px] text-[#072635]">
+            <p className="mt-3 text-[14px] leading-[19px] text-[var(--black-dark)]">
               {latestHistory.temperature.levels}
             </p>
           </div>
@@ -89,13 +91,13 @@ const History = ({ patient }: HistoryProps) => {
               height={96}
               alt="heart rate"
             />
-            <p className="mt-3 text-[16px] font-medium text-[#072635]">
+            <p className="mt-3 text-[16px] font-medium text-[var(--black-dark)]">
               Heart Rate
             </p>
             <p className="text-[30px] leading-[41px] font-extrabold">
               {latestHistory.heart_rate.value} bpm
             </p>
-            <p className="mt-3 flex items-center gap-2 text-[14px] leading-[19px] text-[#072635]">
+            <p className="mt-3 flex items-center gap-2 text-[14px] leading-[19px] text-[var(--black-dark)]">
               <Image
                 src={
                   latestHistory.heart_rate.levels.includes("Lower")

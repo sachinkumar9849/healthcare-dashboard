@@ -26,10 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{ background: "#F6F7F8", padding: "20px" }}
-        className={manrope.className}
-      >
+      <body className={manrope.className}>
         <Header />
         {children}
       </body>

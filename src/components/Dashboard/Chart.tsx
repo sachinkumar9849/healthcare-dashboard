@@ -35,7 +35,7 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
   ) {
     return (
       <div className="rounded-[12px] bg-white">
-        <h3 className="mb-4 text-lg font-bold text-[#072635]">
+        <h3 className="mb-4 text-lg font-bold text-[var(--black-dark)]">
           Blood Pressure Chart
         </h3>
         <div className="py-10 text-center text-gray-500">
@@ -148,25 +148,27 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
   return (
     <div className="rounded-[12px] bg-white">
       <div className="grid grid-cols-12 gap-6 rounded-[12px] bg-[#F4F0FE] p-5">
-        <div className="col-span-8">
+        <div className="col-span-9">
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-lg font-bold text-[#072635]">Blood Pressure</h3>
+            <h3 className="text-lg font-bold text-[var(--black-dark)]">
+              Blood Pressure
+            </h3>
           </div>
           <div className="h-[300px]">
             <Line data={data} options={options} />
           </div>
         </div>
-        <div className="col-span-4">
+        <div className="col-span-3">
           <div className="pt-4">
             <div className="grid grid-cols-1 gap-4">
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-[#C26EB4]"></div>
-                  <span className="text-sm font-semibold text-[#072635]">
+                  <span className="text-sm font-semibold text-[var(--black-dark)]">
                     Systolic
                   </span>
                 </div>
-                <p className="text-2xl font-bold text-[#072635]">
+                <p className="text-2xl font-bold text-[var(--black-dark)]">
                   {patient.diagnosis_history[0].blood_pressure.systolic.value}
                 </p>
                 <p className="mt-1 text-xs text-gray-500">
@@ -176,11 +178,11 @@ const Chart: React.FC<ChartProps> = ({ patient }) => {
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-[#7E6CAB]"></div>
-                  <span className="text-sm font-semibold text-[#072635]">
+                  <span className="text-sm font-semibold text-[var(--black-dark)]">
                     Diastolic
                   </span>
                 </div>
-                <p className="text-2xl font-bold text-[#072635]">
+                <p className="text-2xl font-bold text-[var(--black-dark)]">
                   {patient.diagnosis_history[0].blood_pressure.diastolic.value}
                 </p>
                 <p className="mt-1 text-xs text-gray-500">

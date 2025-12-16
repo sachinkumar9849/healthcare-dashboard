@@ -18,28 +18,28 @@ const Header = () => {
         <ul className="flex gap-8">
           <Link className="flex items-center" href="#">
             <Image src="/home.svg" alt="profile" width={16} height={16} />
-            <span className="ml-2 text-[14px] font-bold text-[#072635]">
+            <span className="ml-2 text-[14px] font-bold text-[var(--black-dark)]">
               Overview
             </span>
           </Link>
           <Link
-            className="flex items-center rounded-full bg-[#01F0D0] px-4 py-2"
+            className="flex items-center rounded-full bg-[var(--secondery-color)] px-4 py-2"
             href="#"
           >
             <Image src="/patients.svg" alt="profile" width={16} height={16} />
-            <span className="ml-2 text-[14px] font-bold text-[#072635]">
+            <span className="ml-2 text-[14px] font-bold text-[var(--black-dark)]">
               Patients
             </span>
           </Link>
           <Link className="flex items-center" href="#">
             <Image src="/schedule.svg" alt="profile" width={16} height={16} />
-            <span className="ml-2 text-[14px] font-bold text-[#072635]">
+            <span className="ml-2 text-[14px] font-bold text-[var(--black-dark)]">
               Schedule
             </span>
           </Link>
           <Link className="flex items-center" href="#">
             <Image src="/message.svg" alt="profile" width={16} height={16} />
-            <span className="ml-2 text-[14px] font-bold text-[#072635]">
+            <span className="ml-2 text-[14px] font-bold text-[var(--black-dark)]">
               Message
             </span>
           </Link>
@@ -50,7 +50,7 @@ const Header = () => {
               width={16}
               height={16}
             />
-            <span className="ml-2 text-[14px] font-bold text-[#072635]">
+            <span className="ml-2 text-[14px] font-bold text-[var(--black-dark)]">
               Transactions
             </span>
           </Link>
@@ -60,10 +60,12 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <Image src="/doctor.png" alt="profile" width={44} height={44} />
           <div className="flex flex-col border-r border-[#EDEDED] pr-4">
-            <p className="text-[14px] font-bold text-[#072635]">
+            <p className="text-[14px] font-bold text-[var(--black-dark)]">
               Dr. Jose Simmons
             </p>
-            <p className="text-[14px] text-[#707070]">General Practitioner</p>
+            <p className="text-[14px] text-[var(--gray-dark)]">
+              General Practitioner
+            </p>
           </div>
           <Image
             className="mr-2 ml-1"

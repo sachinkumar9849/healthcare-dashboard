@@ -42,7 +42,7 @@ export default function PatientProfileCard({
   if (loading) {
     return (
       <div className="rounded-[16px] bg-white p-7">
-        <p className="py-8 text-center text-[#707070]">
+        <p className="py-8 text-center text-[var(--gray-dark)]">
           Loading patient information...
         </p>
       </div>
@@ -52,7 +52,9 @@ export default function PatientProfileCard({
   if (!jessicaTaylor) {
     return (
       <div className="rounded-[16px] bg-white p-7">
-        <p className="py-8 text-center text-[#707070]">Patient not found</p>
+        <p className="py-8 text-center text-[var(--gray-dark)]">
+          Patient not found
+        </p>
       </div>
     );
   }
@@ -80,7 +82,7 @@ export default function PatientProfileCard({
           </div>
         </div>
 
-        <h2 className="mb-8 text-center text-[24px] font-extrabold text-[#072635]">
+        <h2 className="mb-8 text-center text-[24px] font-extrabold text-[var(--black-dark)]">
           {jessicaTaylor.name}
         </h2>
 
@@ -95,10 +97,10 @@ export default function PatientProfileCard({
               />
             </div>
             <div>
-              <p className="text-[14px] leading-[19px] font-medium text-[#072635]">
+              <p className="text-[14px] leading-[19px] font-medium text-[var(--black-dark)]">
                 Date Of Birth
               </p>
-              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[#072635]">
+              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[var(--black-dark)]">
                 {formatDate(jessicaTaylor.date_of_birth)}
               </p>
             </div>
@@ -118,10 +120,10 @@ export default function PatientProfileCard({
               />
             </div>
             <div>
-              <p className="text-[14px] leading-[19px] font-medium text-[#072635]">
+              <p className="text-[14px] leading-[19px] font-medium text-[var(--black-dark)]">
                 Gender
               </p>
-              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[#072635]">
+              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[var(--black-dark)]">
                 {jessicaTaylor.gender}
               </p>
             </div>
@@ -137,10 +139,10 @@ export default function PatientProfileCard({
               />
             </div>
             <div>
-              <p className="text-sm text-[14px] leading-[19px] font-medium text-[#072635]">
+              <p className="text-sm text-[14px] leading-[19px] font-medium text-[var(--black-dark)]">
                 Contact Info.
               </p>
-              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[#072635]">
+              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[var(--black-dark)]">
                 {jessicaTaylor.phone_number}
               </p>
             </div>
@@ -156,10 +158,10 @@ export default function PatientProfileCard({
               />
             </div>
             <div>
-              <p className="text-sm text-[14px] leading-[19px] font-medium text-[#072635]">
+              <p className="text-sm text-[14px] leading-[19px] font-medium text-[var(--black-dark)]">
                 Emergency Contacts
               </p>
-              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[#072635]">
+              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[var(--black-dark)]">
                 {jessicaTaylor.emergency_contact}
               </p>
             </div>
@@ -175,17 +177,17 @@ export default function PatientProfileCard({
               />
             </div>
             <div>
-              <p className="text-sm text-[14px] leading-[19px] font-medium text-[#072635]">
+              <p className="text-sm text-[14px] leading-[19px] font-medium text-[var(--black-dark)]">
                 Insurance Provider
               </p>
-              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[#072635]">
+              <p className="mt-1 text-[14px] leading-[19px] font-bold text-[var(--black-dark)]">
                 {jessicaTaylor.insurance_type}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-8 w-4/6">
+        <div className="mx-auto mt-8 lg:w-5/6">
           <Button onClick={handleShowAllInfo}>Show All Information</Button>
         </div>
       </div>

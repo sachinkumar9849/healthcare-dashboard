@@ -58,7 +58,7 @@ const LabResults: React.FC<LabResultsProps> = ({ patient }) => {
                 key={index}
                 className="flex items-center justify-between px-3 py-3 transition-colors hover:bg-[#F6F7F8]"
               >
-                <p className="text-[13px] leading-[18px] text-[#072635]">
+                <p className="text-[13px] leading-[18px] text-[var(--black-dark)]">
                   {test}
                 </p>
                 <button

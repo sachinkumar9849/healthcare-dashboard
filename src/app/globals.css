@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --theme-color: #d8fcf7;
+  --secondery-color: #01f0d0;
+  --gray-light: #f6f7f8;
+  --gray-dark: #707070;
+  --black-dark: #072635;
+}
+
+.themeBg {
+  background-color: var(--theme-color);
+}
+body {
+  background-color: var(--gray-light);
+  padding: 20px;
+}
